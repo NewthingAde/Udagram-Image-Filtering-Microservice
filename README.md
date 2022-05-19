@@ -50,6 +50,8 @@ Launch the backend API locally. The API is the application's interface to S3 and
     ```
 * You can visit `http://localhost:8080/api/v0/feed` in your web browser to verify that the application is running. You should see a JSON payload. Feel free to play around with Postman to test the API's.
 
+<img width="826" alt="Screenshot 2022-05-19 at 14 42 38" src="https://user-images.githubusercontent.com/80678596/169296297-32cb6e4c-ae9f-4b53-bd80-0d7849c5b949.png">
+
 ### 4. Frontend App
 Launch the frontend app locally.
 
@@ -71,6 +73,11 @@ Launch the frontend app locally.
     ```
 * You can visit `http://localhost:8100` in your web browser to verify that the application is running. You should see a web interface.
 
+<img width="730" alt="Screenshot 2022-05-19 at 14 43 05" src="https://user-images.githubusercontent.com/80678596/169296200-ad7a28f6-7f88-45e7-94ef-69551dc56c15.png">
+
+
+<img width="1167" alt="Screenshot 2022-05-19 at 15 17 23" src="https://user-images.githubusercontent.com/80678596/169302463-804787a2-cc73-4578-bb69-6e57a59c25b8.png">
+
 ## Tips
 1. Take a look at `udagram-api` -- does it look like we can divide it into two modules to be deployed as separate microservices?
 2. The `.dockerignore` file is included for your convenience to not copy `node_modules`. Copying this over into a Docker container might cause issues if your local environment is a different operating system than the Docker image (ex. Windows or MacOS vs. Linux).
@@ -84,3 +91,31 @@ Launch the frontend app locally.
     ```
 4. `set_env.sh` is really for your backend application. Frontend applications have a different notion of how to store configurations. Configurations for the application endpoints can be configured inside of the `environments/environment.*ts` files.
 5. In `set_env.sh`, environment variables are set with `export $VAR=value`. Setting it this way is not permanent; every time you open a new terminal, you will have to run `set_env.sh` to reconfigure your environment variables. To verify if your environment variable is set, you can check the variable with a command like `echo $POSTGRES_USERNAME`.
+
+
+
+
+
+
+
+#### Images of the docker images built
+
+<img width="849" alt="Screenshot 2022-05-19 at 23 41 00" src="https://user-images.githubusercontent.com/80678596/169410434-a10cb221-812b-4e37-a98d-f5904e69a4b3.png">
+
+#### Backend api feed
+
+<img width="1438" alt="Screenshot 2022-05-19 at 23 48 41" src="https://user-images.githubusercontent.com/80678596/169410564-d0741e86-f1d3-4593-805c-9c72ebc3f03f.png">
+
+#### Docker images running 
+
+<img width="1315" alt="Screenshot 2022-05-19 at 23 43 31" src="https://user-images.githubusercontent.com/80678596/169410742-223cbc00-c015-4001-982f-56aa73754d44.png">
+
+#### Local host server running
+
+<img width="1307" alt="Screenshot 2022-05-19 at 23 44 42" src="https://user-images.githubusercontent.com/80678596/169410840-5818924e-3174-47d1-9ace-903ae0a411d4.png">
+
+#### The containerized application running
+
+<img width="1040" alt="Screenshot 2022-05-19 at 23 45 50" src="https://user-images.githubusercontent.com/80678596/169410923-b241c213-f02b-4123-b9bd-9566d9c8fb6d.png">
+
+<img width="1118" alt="Screenshot 2022-05-19 at 23 47 21" src="https://user-images.githubusercontent.com/80678596/169411009-45d87914-c427-4bf0-ac5d-3c2f142d78ce.png">
