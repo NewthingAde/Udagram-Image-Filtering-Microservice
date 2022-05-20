@@ -6,13 +6,13 @@ services:
     image: newthingade/reverseproxy 
   backend_user:
     build:
-      context: ./udagram-user-api
+      context: ../udagram-user-api
     image: newthingade/udagram-user-api
   backend_feed:
     build:
-      context: ./udagram-feed-api  
+      context: ../udagram-feed-api  
     image: newthingade/udagram-feed-api 
   frontend:
     build:
-      context: ./udagram-frontend 
+      context: ../udagram-frontend 
     image: newthing/udagram-frontend:local
