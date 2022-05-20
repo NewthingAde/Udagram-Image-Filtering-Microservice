@@ -6,7 +6,7 @@ services:
     image: newthingade/reverseproxy 
   backend_user:
     build:
-      context: ../udagram-user-api
+      context: /root/home/udagram-user-api
     image: newthingade/udagram-user-api
   backend_feed:
     build:
