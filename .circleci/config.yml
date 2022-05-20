@@ -21,15 +21,15 @@ jobs:
             name: Publish Docker Image to Docker Hub
             command: |
               echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-              docker build -t newthingade/udagram-api-feed:v1 -f /root/project/udagram-api-feed/Dockerfile .
-              docker build -t newthingade/udagram-api-user:v2 -f /root/project/udagram-api-user/Dockerfile .
-              docker build -t newthingade/udagram-frontend:v3 -f /root/project/udagram-frontend/Dockerfile .
-              docker build -t newthingade/udagram-reverseproxy:v4 -f /root/project/udagram-reverseproxy/Dockerfile .
+              sudo docker build -t newthingade/udagram-api-feed:v1 -f /root/project/udagram-api-feed/Dockerfile .
+              sudo docker build -t newthingade/udagram-api-user:v2 -f /root/project/udagram-api-user/Dockerfile .
+              sudo docker build -t newthingade/udagram-frontend:v3 -f /root/project/udagram-frontend/Dockerfile .
+              sudo docker build -t newthingade/udagram-reverseproxy:v4 -f /root/project/udagram-reverseproxy/Dockerfile .
 
-              docker push newthingade/udagram-api-feed:v1
-              docker push newthingade/udagram-api-user:v2
-              docker push newthingade/udagram-frontend:v3
-              docker push newthingade/udagram-reverseproxy:v4
+              sudo docker push newthingade/udagram-api-feed:v1
+              sudo docker push newthingade/udagram-api-user:v2
+              sudo docker push newthingade/udagram-frontend:v3
+              sudo docker push newthingade/udagram-reverseproxy:v4
 
 workflows:
   version: 2
