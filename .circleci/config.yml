@@ -11,20 +11,20 @@ jobs:
 
     - run:
        name: build Udagram-Api-Feed
-       command: docker build -t newthingade/udagram-api-feed:v1 -f udagram-api-feed .
+       command: docker build -t newthingade/udagram-api-feed:v1 -f home/udagram-api-feed .
 
 
     - run:
        name: build Udagram-Api-User
-       command: docker build -t newthingade/udagram-api-user:v2 -f udagram-api-user .
+       command: docker build -t newthingade/udagram-api-user:v2 -f home/udagram-api-user .
 
     - run:
        name: build Udagram-Frontend
-       command: docker build -t newthingade/udagram-frontend:v3 -f udagram-frontend .
+       command: docker build -t newthingade/udagram-frontend:v3 -f home/udagram-frontend .
 
     - run:
        name: build Udagram-reverseproxy
-       command: docker build -t newthingade/udagram-reverseproxy:v4 -f udagram-reverseproxy .
+       command: docker build -t newthingade/udagram-reverseproxy:v4 -f home/udagram-reverseproxy .
     
     
     - run:
