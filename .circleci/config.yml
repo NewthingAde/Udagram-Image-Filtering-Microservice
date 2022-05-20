@@ -11,7 +11,10 @@ jobs:
 
     - run:
        name: build Udagram-Api-Feed
-       command: docker build -t newthingade/udagram-api-feed:v1 -f /root/project/udagram-api-feed .
+       command:  | 
+        systemctl status docker && systemctl start docker
+
+        docker build -t newthingade/udagram-api-feed:v1 -f /root/project/udagram-api-feed .
 
 
     - run:
