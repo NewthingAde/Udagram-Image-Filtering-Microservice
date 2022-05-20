@@ -13,7 +13,6 @@ jobs:
        name: install docker
        command:  |
         docker -v && docker-compose -v
-        sudo rm /usr/local/bin/docker-compose
         curl -L https://github.com/docker/compose/releases/download/19.03.0/docker-compose-`uname -s`-`uname -m` > docker-compose
         chmod +x docker-compose
         sudo mv docker-compose /usr/local/bin
