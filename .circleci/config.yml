@@ -8,13 +8,14 @@ jobs:
 
    steps:
     - checkout
+    - setup_remote_docker
 
     - run:
        name: install docker
        command:  |
         docker -v && docker-compose -v
-        service status docker
-        service start docker
+        systmctl status docker
+        systemctl start docker
    
     - run:
        name: build Udagram-Api-Feed
