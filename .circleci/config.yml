@@ -21,7 +21,7 @@ jobs:
             name: Publish Docker Image to Docker Hub
             command: |
               echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-              sudo docker build -t newthingade/udagram-api-feed:v1 -f /root/project/udagram-api-feed/Dockerfile .
+              sudo docker build -t newthingade/udagram-api-feed:v1 -f udagram-api-feed/Dockerfile .
               sudo docker build -t newthingade/udagram-api-user:v2 -f /root/project/udagram-api-user/Dockerfile .
               sudo docker build -t newthingade/udagram-frontend:v3 -f /root/project/udagram-frontend/Dockerfile .
               sudo docker build -t newthingade/udagram-reverseproxy:v4 -f /root/project/udagram-reverseproxy/Dockerfile .
