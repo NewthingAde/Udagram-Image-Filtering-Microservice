@@ -14,8 +14,6 @@ jobs:
        name: install docker
        command:  |
         docker -v && docker-compose -v
-        systmctl status docker
-        systemctl start docker
    
     - run:
        name: build Udagram-Api-Feed
