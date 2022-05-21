@@ -7,6 +7,7 @@ jobs:
       - image: docker
     
    working_directory: ~/Udagram-Image-Filtering-Microservice
+
    steps:
     - checkout
     - setup_remote_docker
@@ -16,7 +17,8 @@ jobs:
        command:  |
 
         docker -v && docker-compose -v
-        dockerd
+        sudo mv /var/lib/docker/network/files/ /tmp/dn-bak
+        sudo service docker restart
         docker image prune --all 
         docker-compose -f docker-compose-build.yaml build --parallel
     
