@@ -1,68 +1,40 @@
-version: 2
+orbs:
+  docker: circleci/docker@1.5.0
+version: 2.1
+executors:
+  docker-publisher: 
+    environment:
+    docker: 
+      - image: circleci/node:latest
+        auth:
+            username: $DOCKERHUB_USERNAME
+            password: $DOCKERHUB_PASSWORD
 
 jobs:
+    publishLatestToHub: 
+      executor: docker-publisher
+ 
+      steps: 
+        - checkout
+        - setup_remote_docker
+        - run: 
+            name: Publish Docker Image to Docker Hub
+            command: |
+              echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+              sudo usermod -aG docker $(whoami)
+              sudo dockerd
+              sudo docker build -t newthingade/udagram-api-feed:v1 -f udagram-api-feed/Dockerfile .
+              sudo docker build -t newthingade/udagram-api-user:v2 -f /root/project/udagram-api-user/Dockerfile .
+              sudo docker build -t newthingade/udagram-frontend:v3 -f /root/project/udagram-frontend/Dockerfile .
+              sudo docker build -t newthingade/udagram-reverseproxy:v4 -f /root/project/udagram-reverseproxy/Dockerfile .
 
- build:
-   docker:
-      - image: docker
-
-   steps:
-    - checkout
-    - setup_remote_docker
-
-    - run:
-       name: install docker
-       command:  |
-        docker -v && docker-compose -v
-   
-    - run:
-       name: build Udagram-Api-Feed
-       command:  
-    
-        docker build -t newthingade/udagram-api-feed:v1 -f /root/project/udagram-api-feed/Dockerfile .
-
-
-    - run:
-       name: build Udagram-Api-User
-       command: docker build -t newthingade/udagram-api-user:v2 -f /root/project/udagram-api-user/Dockerfile .
-
-    - run:
-       name: build Udagram-Frontend
-       command: docker build -t newthingade/udagram-frontend:v3 -f /root/project/udagram-frontend/Dockerfile .
-
-    - run:
-       name: build Udagram-reverseproxy
-       command: docker build -t newthingade/udagram-reverseproxy:v4 -f /root/project/udagram-reverseproxy/Dockerfile .
-    
-    
-    - run:
-       name:  Push build Udagram-Api-Feed
-       command: |
-         docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
-         docker push newthingade/udagram-api-feed:v1
-   
-   
-    - run:
-       name:  Push build Udagram-Api-User
-       command: |
-         docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
-         docker push newthingade/udagram-api-user:v2
-   
-    - run:
-       name:  Push build Udagram-Frontend
-       command: |
-         docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
-         docker push newthingade/udagram-frontend:v3
-    
-    - run:
-       name:  Push build Udagram-reverseproxy
-       command: |
-         docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
-         docker push newthingade/udagram-reverseproxy:v4
-
+              sudo docker push newthingade/udagram-api-feed:v1
+              sudo docker push newthingade/udagram-api-user:v2
+              sudo docker push newthingade/udagram-frontend:v3
+              sudo docker push newthingade/udagram-reverseproxy:v4
 
 workflows:
   version: 2
-  default:
+  build-master:
     jobs:
-      - build
+       - publishLatestToHub
