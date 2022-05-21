@@ -1,7 +1,7 @@
 pipeline { 
 
     environment {  
-
+        credentialsId: "dockerhub"
     }
 
     agent any 
@@ -55,7 +55,7 @@ pipeline {
         stage('Publish image to Docker Hub') {
           
             steps {
-        withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
+        withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
           sh  'docker push newthingade/udagram-api-feed:latest'
           sh  'docker push newthingade/udagram-api-feed:$BUILD_NUMBER' 
 
