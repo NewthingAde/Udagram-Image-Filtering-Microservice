@@ -17,7 +17,8 @@ jobs:
        command:  |
 
         docker -v && docker-compose -v
-        ifconfig docker0 down
+        apt-get remove docker-engine
+        apt-get install docker
         docker image prune --all 
         docker-compose -f docker-compose-build.yaml build 
     
