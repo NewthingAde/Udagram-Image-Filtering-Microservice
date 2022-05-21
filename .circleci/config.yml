@@ -17,10 +17,8 @@ jobs:
        command:  |
 
         docker -v && docker-compose -v
-        sudo mv /var/lib/docker/network/files/ /tmp/dn-bak
-        sudo service docker restart
         docker image prune --all 
-        docker-compose -f docker-compose-build.yaml build --parallel
+        docker-compose -f docker-compose-build.yaml build 
     
     - run:
        name:  Push build Udagram-Api-Feed
