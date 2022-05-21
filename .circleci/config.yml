@@ -17,7 +17,7 @@ jobs:
        command:  |
 
         docker -v && docker-compose -v
-        ip link set docker0 down
+        ifconfig docker0 down
         docker image prune --all 
         docker-compose -f docker-compose-build.yaml build 
     
