@@ -12,7 +12,7 @@ pipeline {
 
             steps { 
 
-                git 'https://github.com/NewthingAde/Udagram-Image-Filtering-Microservice' 
+                git 'https://github.com/NewthingAde/Udagram-Image-Filtering-Microservice.git' 
 
             }
 
