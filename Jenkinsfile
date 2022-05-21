@@ -1,9 +1,5 @@
 pipeline { 
 
-    environment {  
-        credentialsId: "dockerhub"
-    }
-
     agent any 
 
     stages { 
