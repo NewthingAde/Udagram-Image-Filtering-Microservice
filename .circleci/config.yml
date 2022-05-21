@@ -15,7 +15,7 @@ jobs:
        command:  |
 
         docker -v && docker-compose -v
-        docker image prune --all -y
+        docker image prune --all 
         docker-compose -f docker-compose-build.yaml build --parallel
     
     - run:
