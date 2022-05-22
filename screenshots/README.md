@@ -6,6 +6,10 @@ To help review your infrastructure, please include the following screenshots in 
 * GitHub repository’s settings showing your Travis webhook (can be found in Settings - Webhook)
 * Travis CI showing a successful build and deploy job
 
+
+<img width="1105" alt="Screenshot 2022-05-22 at 02 40 23" src="https://user-images.githubusercontent.com/80678596/169673602-36b2d64f-3e5c-4965-9575-d07578a4ee31.png">
+
+
 ## Kubernetes
 * To verify Kubernetes pods are deployed properly
 ```bash

@@ -119,3 +119,9 @@ Launch the frontend app locally.
 <img width="1040" alt="Screenshot 2022-05-19 at 23 45 50" src="https://user-images.githubusercontent.com/80678596/169410923-b241c213-f02b-4123-b9bd-9566d9c8fb6d.png">
 
 <img width="1118" alt="Screenshot 2022-05-19 at 23 47 21" src="https://user-images.githubusercontent.com/80678596/169411009-45d87914-c427-4bf0-ac5d-3c2f142d78ce.png">
+
+
+#### Images of a succesful build and deploy of docker to dockerhub using Gitlab
+
+<img width="1105" alt="Screenshot 2022-05-22 at 02 40 23" src="https://user-images.githubusercontent.com/80678596/169673602-36b2d64f-3e5c-4965-9575-d07578a4ee31.png">
+

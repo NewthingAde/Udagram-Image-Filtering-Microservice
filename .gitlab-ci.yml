@@ -1,25 +1,58 @@
-stages:
-  - build
-  - build-docker-image
-  - push-image-to-docker-hub
-
-build-java-project:
+# This file is a template, and might need editing before it works on your project.
+docker-build-master:
+  # Official docker image.
+  image: docker:latest
   stage: build
-  script:
-    mvn package
-  artifacts:
-    paths:
-      - /home/gitlab-runner/
-
-build-docker-image:
-  stage: build-docker-image
-  script:
-    - docker info
-    - docker build -t devopshint/java-maven .
-Push Docker Image to DockerHub:
-  stage: push-image-to-docker-hub
+  services:
+    - docker:dind
   before_script:
-    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD"
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
   script:
-    - docker info
-    - docker push devopshint/java-maven
+
+    - docker build -t udagram-api-feed ./udagram-api-feed
+    - docker tag udagram-api-feed newthingade/udagram-api-feed:latest
+    - docker push docker.io/newthingade/udagram-api-feed
+
+    - docker build -t udagram-api-user ./udagram-api-user
+    - docker tag udagram-api-user newthingade/udagram-api-user:latest
+    - docker push docker.io/newthingade/udagram-api-user
+
+    - docker build -t udagram-frontend ./udagram-frontend
+    - docker tag udagram-frontend newthingade/udagram-frontend:latest
+    - docker push docker.io/newthingade/udagram-frontend
+
+    - docker build -t udagram-reverseproxy ./udagram-reverseproxy
+    - docker tag udagram-reverseproxy newthingade/udagram-reverseproxy:latest
+    - docker push docker.io/newthingade/udagram-api-feed
+
+  only:
+    - main
+
+docker-build:
+  # Official docker image.
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+
+  script:
+    - docker build -t udagram-api-feed ./udagram-api-feed
+    - docker tag udagram-api-feed newthingade/udagram-api-feed:latest
+    - docker push docker.io/newthingade/udagram-api-feed
+
+    - docker build -t udagram-api-user ./udagram-api-user
+    - docker tag udagram-api-user newthingade/udagram-api-user:latest
+    - docker push docker.io/newthingade/udagram-api-user
+
+    - docker build -t udagram-frontend ./udagram-frontend
+    - docker tag udagram-frontend newthingade/udagram-frontend:latest
+    - docker push docker.io/newthingade/udagram-frontend
+
+    - docker build -t udagram-reverseproxy ./udagram-reverseproxy
+    - docker tag udagram-reverseproxy newthingade/reverseproxy:latest
+    - docker push docker.io/newthingade/reverseproxy
+
+  except:
+    - main
