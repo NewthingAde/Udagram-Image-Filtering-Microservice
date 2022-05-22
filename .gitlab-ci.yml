@@ -1,4 +1,3 @@
-
 docker-build-master:
   # Official docker image.
   image: docker:latest
@@ -22,8 +21,9 @@ docker-build-master:
     - docker push docker.io/newthingade/udagram-frontend
 
     - docker build -t udagram-reverseproxy ./udagram-reverseproxy
-    - docker tag udagram-reverseproxy newthingade/udagram-reverseproxy:latest
-    - docker push docker.io/newthingade/udagram-api-feed
+    - docker tag udagram-reverseproxy newthingade/reverseproxy:latest
+    - docker push docker.io/newthingade/reverseproxy
+  
 
   only:
     - main
