@@ -149,9 +149,9 @@ Docker images running
 
 * Run the container 
 
-```bash
-docker-compose up
-        ```
+                        docker-compose up
+
+
 * Visit http://localhost:8100 in your web browser to verify that the application is running.
 
 
