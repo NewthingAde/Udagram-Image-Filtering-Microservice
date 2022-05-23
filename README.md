@@ -132,13 +132,15 @@ Once you refactor the Udagram application, it will have the following services r
 
 * Create images - In the project's parent directory, create a `docker-compose-build.yaml file` . It will create an image for each individual service. Then, you can run the following command to create images locally then run 
 
-```bash
-# Make sure the Docker services are running in your local machine
-# Remove unused and dangling images
-docker image prune --all
-# Run this command from the directory where you have the "docker-compose-build.yaml" file present
-docker-compose -f docker-compose-build.yaml build --parallel
-    ```
+Make sure the Docker services are running in your local machine
+
+Remove unused and dangling images
+
+                 docker image prune --all
+
+Run this command from the directory where you have the "docker-compose-build.yaml" file present
+
+            docker-compose -f docker-compose-build.yaml build --parallel
 
 
 <img width="849" alt="Screenshot 2022-05-19 at 23 41 00" src="https://user-images.githubusercontent.com/80678596/169410434-a10cb221-812b-4e37-a98d-f5904e69a4b3.png">
