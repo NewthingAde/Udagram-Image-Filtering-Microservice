@@ -124,7 +124,7 @@ Once you refactor the Udagram application, it will have the following services r
 
 * Navigate to the project directory, and set up the environment variables again
  
- ```bash
+    ```bash
     source set_env.sh
     ```
     
