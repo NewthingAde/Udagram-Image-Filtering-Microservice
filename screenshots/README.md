@@ -2,14 +2,14 @@
 To help review your infrastructure, please include the following screenshots in this directory::
 
 ## Deployment Pipeline
-* DockerHub showing containers that you have pushed
+### DockerHub showing containers that you have pushed
 
 <img width="1440" alt="Screenshot 2022-05-23 at 01 25 07" src="https://user-images.githubusercontent.com/80678596/169720544-c3adde93-2a47-497f-83d2-8e42014e29cd.png">
 
 
 * GitHub repository’s settings showing your Travis webhook (can be found in Settings - Webhook)
 
-* Gitlab showing a successful build and deploy job
+### Gitlab showing a successful build and deploy job
 
 
 <img width="1440" alt="Screenshot 2022-05-22 at 03 16 24" src="https://user-images.githubusercontent.com/80678596/169674240-a4136520-0081-44c6-8d6e-1836090bc43c.png">
@@ -21,11 +21,11 @@ To help review your infrastructure, please include the following screenshots in 
 <img width="866" alt="Screenshot 2022-05-22 at 03 15 08" src="https://user-images.githubusercontent.com/80678596/169674193-a3377703-7821-41d8-aee8-64942fd5795b.png">
 
 ## Kubernetes
-* To verify Kubernetes pods are deployed properly
+### To verify Kubernetes pods are deployed properly
 
                     kubectl get pods
 
-* To verify Kubernetes services are properly set up
+### To verify Kubernetes services are properly set up
 
 
 <img width="1304" alt="Screenshot 2022-05-23 at 19 08 44" src="https://user-images.githubusercontent.com/80678596/169885491-9b87bb95-03d1-446d-9734-3879ac8eea9f.png">
@@ -33,7 +33,7 @@ To help review your infrastructure, please include the following screenshots in 
 
                     kubectl describe services
 
-* To verify that you have horizontal scaling set against CPU usage
+### To verify that you have horizontal scaling set against CPU usage
 
 
 <img width="809" alt="Screenshot 2022-05-23 at 18 58 28" src="https://user-images.githubusercontent.com/80678596/169884400-b6a5981c-d607-4b74-9202-01ef312e63de.png">
@@ -57,13 +57,13 @@ To help review your infrastructure, please include the following screenshots in 
 
 <img width="883" alt="Screenshot 2022-05-23 at 20 30 16" src="https://user-images.githubusercontent.com/80678596/169883982-6cdfe4c1-cb85-4948-9a5c-61c79818c5bd.png">
 
-* To verify that you have set up logging with a backend application
+###  To verify that you have set up logging with a backend application
 
                         kubectl logs {pod_name}
 
 <img width="1021" alt="Screenshot 2022-05-23 at 20 18 44" src="https://user-images.githubusercontent.com/80678596/169882318-e5629d26-bc00-4a29-8f9c-4bc767931173.png">
 
 
-* The finall end point image
+###  The finall end point image
 
 <img width="1440" alt="Screenshot 2022-05-23 at 19 38 38" src="https://user-images.githubusercontent.com/80678596/169885764-efa2bbed-5cfe-40ec-8185-d0241e7b5f1c.png">
