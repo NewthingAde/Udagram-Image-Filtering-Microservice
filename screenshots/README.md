@@ -18,6 +18,9 @@ To help review your infrastructure, please include the following screenshots in 
 <img width="1105" alt="Screenshot 2022-05-22 at 02 40 23" src="https://user-images.githubusercontent.com/80678596/169673602-36b2d64f-3e5c-4965-9575-d07578a4ee31.png">
 
 
+<img width="1435" alt="Screenshot 2022-05-23 at 21 39 41" src="https://user-images.githubusercontent.com/80678596/169893848-8ccd156c-69de-4316-97c4-88b483ec4a0c.png">
+
+
 <img width="866" alt="Screenshot 2022-05-22 at 03 15 08" src="https://user-images.githubusercontent.com/80678596/169674193-a3377703-7821-41d8-aee8-64942fd5795b.png">
 
 ## Kubernetes
