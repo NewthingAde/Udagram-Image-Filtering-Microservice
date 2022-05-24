@@ -179,3 +179,19 @@ Docker images running
 
 <img width="1105" alt="Screenshot 2022-05-22 at 02 40 23" src="https://user-images.githubusercontent.com/80678596/169673602-36b2d64f-3e5c-4965-9575-d07578a4ee31.png">
 
+### Create the HorizontalPodAutoscaler
+
+- Installation
+
+            kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+
+- Create the HorizontalPodAutoscaler:(Do this for all deployment)
+
+        kubectl autoscale deployment backend-feed --cpu-percent=70 --min=3 --max=5
+- 
+You can check the current status of the newly-made HorizontalPodAutoscaler, by running:
+
+                kubectl get hpa
+
+
+<img width="892" alt="Screenshot 2022-05-24 at 23 12 44" src="https://user-images.githubusercontent.com/80678596/170134297-dd7c55e5-39b2-4840-9de4-4596e41c9c63.png">

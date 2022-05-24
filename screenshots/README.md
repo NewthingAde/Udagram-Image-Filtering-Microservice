@@ -52,13 +52,8 @@ To help review your infrastructure, please include the following screenshots in 
 
                         kubectl describe hpa
 
-<img width="872" alt="Screenshot 2022-05-23 at 20 29 28" src="https://user-images.githubusercontent.com/80678596/169884213-047764fe-b6e2-4275-9d0b-3269b0d25a47.png">
+<img width="892" alt="Screenshot 2022-05-24 at 23 12 44" src="https://user-images.githubusercontent.com/80678596/170134297-dd7c55e5-39b2-4840-9de4-4596e41c9c63.png">
 
-<img width="870" alt="Screenshot 2022-05-23 at 20 29 47" src="https://user-images.githubusercontent.com/80678596/169884142-fc54c2f5-22b5-4dd4-8051-50d53082b8e4.png">
-
-<img width="880" alt="Screenshot 2022-05-23 at 20 30 02" src="https://user-images.githubusercontent.com/80678596/169884060-15fa9bfb-65da-49c5-9936-a677f513985e.png">
-
-<img width="883" alt="Screenshot 2022-05-23 at 20 30 16" src="https://user-images.githubusercontent.com/80678596/169883982-6cdfe4c1-cb85-4948-9a5c-61c79818c5bd.png">
 
 ###  To verify that you have set up logging with a backend application
 
