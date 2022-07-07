@@ -194,8 +194,14 @@ Docker images running
 - Create the HorizontalPodAutoscaler:(Do this for all deployment)
 
         kubectl autoscale deployment backend-feed --cpu-percent=70 --min=3 --max=5
-- 
-You can check the current status of the newly-made HorizontalPodAutoscaler, by running:
+        
+        kubectl autoscale deployment backend-user --cpu-percent=70 --min=3 --max=5
+        
+        kubectl autoscale deployment frontend --cpu-percent=70 --min=3 --max=5
+        
+        kubectl autoscale deployment reverseproxy --cpu-percent=70 --min=3 --max=5
+        
+- You can check the current status of the newly-made HorizontalPodAutoscaler, by running:
 
                 kubectl get hpa
 
