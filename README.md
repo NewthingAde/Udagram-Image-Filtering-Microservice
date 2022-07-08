@@ -77,7 +77,11 @@ Launch the frontend app locally.
     ```
 * Install Ionic Framework's Command Line tools for us to build and run the application:
     ```bash
-    npm install -g ionic
+     The package name has changed from ionic to @ionic/cli!
+                                
+             To update, run: npm uninstall -g ionic
+             
+                 Then run: npm i -g @ionic/cli
     ```
 * Prepare your application by compiling them into static files.
     ```bash
